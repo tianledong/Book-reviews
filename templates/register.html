@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block headTitle %}
+    Sign Up | Book Reviews
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form action="/register" method="post" class="wbdv-form">
+            <div class="form-group row">
+                <label for="usernameFld" class="col-sm-3 col-form-label">
+                    Username </label>
+                <div class="col-sm-9">
+                    <input class="form-control wbdv-field wbdv-username"
+                           id="usernameFld" name="register_username"
+                           placeholder="Alice">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="passwordFld" class="col-sm-3 col-form-label">
+                    Password </label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control wbdv-field wbdv-password"
+                           id="passwordFld" name="register_password" placeholder="123qwe#$%">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="verifyPasswordFld" class="col-sm-3 col-form-label">Verify Password</label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control wbdv-field wbdv-password-verify"
+                           id="verifyPasswordFld" name="register_confirm_password" placeholder="123qwe#$%">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="emailFld" class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control wbdv-field wbdv-password-verify"
+                           id="emailFld" name="register_email" placeholder="Alice@Wonderland.com">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9">
+                    <button class="wbdv-button wbdv-register btn btn-primary btn-block" type="submit"
+                            id="registerBtn">Sign up
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

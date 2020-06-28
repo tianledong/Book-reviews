@@ -1,0 +1,54 @@
+* {
+    font-size: 15px;
+}
+
+body {
+    background: url('../static/kevin-butz-U9iNjai5bDI-unsplash.jpg') no-repeat fixed center;
+    background-size: cover;
+    color: floralwhite;
+}
+
+.background {
+    background-image: linear-gradient(to bottom, rgba(32, 36, 43, .9), transparent);
+}
+
+.container {
+    z-index: 2;
+    background: rgba(32, 36, 43, .8);
+    padding: 15px 15px;
+}
+
+.card {
+    display: inline-block;
+    float: none;
+    margin: 10px auto;
+}
+
+.card img {
+    width: 100%;
+    height: 400px;
+}
+
+.card-body {
+    background: #262525;
+}
+
+.wbdv-form {
+    width: 100%;
+    max-width: 330px;
+    padding: 20px;
+    margin: auto;
+}
+
+.form-search {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    margin: auto;
+}
+
+#card-container {
+    display: flex;
+    align-items: center;
+}
+

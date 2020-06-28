@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block headTitle %}
+    {{ target_book['title'] }} | Book Reviews
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <img src="http://covers.openlibrary.org/b/isbn/{{ target_book['isbn'] }}-L.jpg"
+                     class="img-fluid mx-auto d-block" alt="bookpics">
+                <br>
+            </div>
+            <div class="col-sm-4 text-center">
+                <h1 class="card-title">{{ target_book['title'] }}</h1>
+                <h3 class="card-subtitle mb-2">by {{ target_book['author'] }}</h3>
+                <br>
+                <br>
+                <h6 class="card-text"><strong>ISBN: {{ target_book['isbn'] }}</strong></h6>
+                <h6 class="card-text"><strong>Published Year: {{ target_book['year'] }}</strong></h6>
+                <br>
+            </div>
+            <div class="col-sm-4">
+                <img src="../static/goodreads.png" class="img-fluid mx-auto d-block" alt="goodreads">
+                <div class="text-center">
+                    <br>
+                    <h5>Rating on Goodreads</h5>
+                    <h6>Average rating: {{ average_rating }}</h6>
+                    <h6>Total ratings: {{ ratings_count }}</h6>
+                    <h6><a href=https://www.goodreads.com/search?q={{ target_book['isbn'] }}> More information at
+                        Goodreads </a></h6>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div>
+            <form action="/book/{{ target_book['isbn'] }}" method="post">
+                <div class="form-group">
+                    <label for="ratingFld">Rate</label>
+                    <select id="ratingFld" name="rating" required>
+                        <option disabled selected value>--select an option--</option>
+                        <option value="5">5 Stars: Excellent</option>
+                        <option value="4">4 Stars: Good</option>
+                        <option value="3">3 Stars: Fair</option>
+                        <option value="2">2 Stars: Poor</option>
+                        <option value="1">1 Star: Very Poor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="commentsArea">Comment</label>
+                    <textarea class="form-control" id="commentsArea" name="comment"></textarea>
+                </div>
+                <button class="btn btn-primary btn-sm" type="submit">Submit</button>
+            </form>
+        </div>
+        <br>
+        {% if comments %}
+            <div class="row">
+                <ul class="media-list">
+                    {% for comment in comments %}
+                        <li class="media">
+                            <div class="media-body">
+                                <strong class="text-success">{{ comment['username'] }} at {{ comment['time'] }}
+                                    said</strong>
+                                <p>
+                                    {{ comment['comment'] }}
+                                </p>
+                                <small>Rated: {{ comment['rating'] }}/5</small>
+                            </div>
+                        </li>
+                        <br>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

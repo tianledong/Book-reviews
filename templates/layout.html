@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block headTitle %} {% endblock %}</title>
+    <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            rel="stylesheet"/>
+    <link href="../static/style.css" rel="stylesheet"/>
+</head>
+
+
+<body>
+<header>
+    <div class="background">
+        <nav class="navbar pt-0">
+            <a class="navbar-brand" href="/">
+                <img src="../static/logo1.png" width="100" height="40">
+            </a>
+            <div class="nav-item">
+                {% if session.name %}
+                    <a class="nav-link float-right" href="/logout">Sign Out</a>
+                    <a class="nav-link float-right" href="/search">Search</a>
+                    <a class="nav-link float-right">Welcome, {{ session.name }}!</a>
+                    </ul>
+                {% else %}
+                    <a class="nav-link float-right" href="/register">Sign Up</a>
+                    <a class="nav-link float-right" href="/login">Sign In</a>
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+</header>
+<div class="main-body">
+    {% block body %}
+
+
+    {% endblock %}
+</div>
+</body>
+</html>

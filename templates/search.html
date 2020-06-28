@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block headTitle %}
+    Search | Book Reviews
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <br/>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <form action="/search" method="post">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <input class="form-control" type="search"
+                                   name="search" placeholder="Search ISBN, author name or book title here">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-primary" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% if result_books %}
+        <br>
+        <div class="container-fluid col align-items-center">
+            <div class="alert alert-success text-center" role="alert">
+                Success! There are the results for "{{ post_data }}"
+            </div>
+        </div>
+        <div class="container" id="card-container">
+            <div class="row">
+                {% for book in result_books %}
+                    <div class="card" style="width: 20rem;">
+                        <img class="card-img-top"
+                             src="http://covers.openlibrary.org/b/isbn/{{ book['isbn'] }}-L.jpg"
+                             alt="Card image">
+                        <div class="card-body col-auto">
+                            <h5 class="card-title">{{ book['title'] }}</h5>
+                            <h6 class="card-subtitle mb-2">by {{ book['author'] }}</h6>
+                            <p class="card-text">ISBN: {{ book['isbn'] }}</p>
+                            <p class="card-text">Published Year: {{ book['year'] }}</p>
+                            <a href="/book/{{ book['isbn'] }}" class="card-link">More information</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    </div>
+    </div>
+{% endblock %}
