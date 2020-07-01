@@ -6,6 +6,7 @@ body {
     background: url('../static/kevin-butz-U9iNjai5bDI-unsplash.jpg') no-repeat fixed center;
     background-size: cover;
     color: floralwhite;
+    height: 100vh;
 }
 
 .background {
