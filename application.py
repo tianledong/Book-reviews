@@ -27,7 +27,7 @@ db = scoped_session(sessionmaker(bind=engine))
 
 @app.route("/")
 def index():
-    return redirect('/search')
+    return render_template("landing.html")
 
 
 @app.route("/login", methods=["POST", "GET"])

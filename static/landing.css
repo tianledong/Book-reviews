@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&display=swap');
+
+body {
+    background-color: #000;
+    min-height: 100vh;
+}
+
+#landing-header a {
+    text-decoration: none;
+}
+
+#landing-header {
+    z-index: 1;
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    width: 100%;
+    animation: fade-in 3s ease-in forwards;
+    opacity: 0;
+    font-family: 'Bad Script', cursive;
+}
+
+@keyframes fade-in {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+#landing-header h1{
+    color: #c3c3c8;
+    font-size: 2.5em;
+    padding: 1.5em;
+}
+#landing-header h2 {
+    color: #c3c3c8;
+    font-size: 3em;
+    font-weight: 500;
+    letter-spacing: 5px;
+    cursor: pointer;
+}
+
+
+
+#landing-header h2 span {
+    transition: 0.5s;
+}
+
+#landing-header h2:hover span:nth-child(1) {
+    margin-right: 10px;
+}
+
+#landing-header h2:hover span:nth-child(2) {
+    margin-left: 40px;
+}
+
+#landing-header h2:hover span {
+    color: #fff;
+    text-shadow: 0 0 10px #ffffff,
+    0 0 20px #ffffff,
+    0 0 40px #ffffff,
+    0 0 80px #ffffff,
+    0 0 120px #ffffff,
+    0 0 140px #ffffff;
+
+}
+
+.slideshow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slideshow li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 40s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+    background-image: url('1.jpg')
+}
+
+.slideshow li:nth-child(2) {
+    background-image: url('2.jpg');
+    animation-delay: 10s;
+}
+
+.slideshow li:nth-child(3) {
+    background-image: url('3.jpg');
+    animation-delay: 20s;
+}
+
+.slideshow li:nth-child(4) {
+    background-image: url('4.jpg');
+    animation-delay: 30s;
+}
+
+@keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    10% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    20% {
+        opacity: 1
+    }
+    30% {
+        opacity: 0
+    }
+}
+
+
