@@ -22,15 +22,20 @@ body {
 }
 
 @keyframes fade-in {
-    from {opacity: 0}
-    to {opacity: 1}
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
 }
 
-#landing-header h1{
+#landing-header h1 {
     color: #c3c3c8;
     font-size: 2.5em;
     padding: 1.5em;
 }
+
 #landing-header h2 {
     color: #c3c3c8;
     font-size: 3em;
@@ -38,7 +43,6 @@ body {
     letter-spacing: 5px;
     cursor: pointer;
 }
-
 
 
 #landing-header h2 span {
@@ -123,6 +127,16 @@ body {
     }
     30% {
         opacity: 0
+    }
+}
+
+@media (max-width: 640px) {
+    #landing-header h1 {
+        font-size: 1.5em;
+    }
+
+    #landing-header h2 {
+        font-size: 2em;
     }
 }
 

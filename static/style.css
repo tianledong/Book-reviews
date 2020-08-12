@@ -11,6 +11,8 @@ body {
 }
 
 .background {
+    height: 100%;
+    width: 100%;
     background-image: linear-gradient(to bottom, rgba(13, 13, 16, 0.9), rgba(32, 36, 43, .8));
 }
 
