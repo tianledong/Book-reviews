@@ -1,4 +1,5 @@
 import os
+import sys
 
 import requests
 
@@ -159,8 +160,14 @@ def book(isbn):
     url = f"https://openlibrary.org/isbn/{isbn}.json"
 
     res = requests.get(url)
+    print(res)
+    sys.stdout.flush()
     average_rating = res.json()['number_of_pages']
+    print(average_rating)
+    sys.stdout.flush()
     ratings_count = res.json()['publishers'][0]
+    print(ratings_count)
+    sys.stdout.flush()
     if request.method == "GET":
         return render_template("book.html", target_book=target_book, comments=comments, average_rating=average_rating,
                                ratings_count=ratings_count)
