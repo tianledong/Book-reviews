@@ -24,12 +24,9 @@
             <div class="col-sm-4">
                 <img src="../static/goodreads.png" class="img-fluid mx-auto d-block" alt="goodreads">
                 <div class="text-center">
-                    <br>
-                    <h5>Rating on Goodreads</h5>
-                    <h6>Average rating: {{ average_rating }}</h6>
-                    <h6>Total ratings: {{ ratings_count }}</h6>
-                    <h6><a href=https://www.goodreads.com/search?q={{ target_book['isbn'] }}> More information at
-                        Goodreads </a></h6>
+                    <h6>Publisher: {{ publisher }}</h6>
+                    <h6><a href=https://openlibrary.org/isbn/{{ target_book['isbn'] }}> More information at
+                        Open Library </a></h6>
                 </div>
             </div>
         </div>
