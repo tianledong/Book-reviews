@@ -19,7 +19,7 @@
                 <br>
                 <h6 class="card-text"><strong>ISBN: {{ target_book['isbn'] }}</strong></h6>
                 <h6 class="card-text"><strong>Published Year: {{ target_book['year'] }}</strong></h6>
-                <h6 class="card-text"><strong>Publishers: {% for publisher in publisher %}
+                <h6 class="card-text"><strong>Publishers: {% for publisher in publishers %}
                     <span>{{ publisher }} </span>
                     {% endfor %}
                 </strong></h6>
