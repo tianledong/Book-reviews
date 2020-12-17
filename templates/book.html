@@ -19,11 +19,14 @@
                 <br>
                 <h6 class="card-text"><strong>ISBN: {{ target_book['isbn'] }}</strong></h6>
                 <h6 class="card-text"><strong>Published Year: {{ target_book['year'] }}</strong></h6>
-                <h6 class="card-text"><strong>Publishers: {{ publisher }}</strong></h6>
+                <h6 class="card-text"><strong>Publishers: {% for publisher in publisher %}
+                    <span>{{ publisher }} </span>
+                    {% endfor %}
+                </strong></h6>
                 <br>
             </div>
             <div class="col-sm-4">
-                <img src="../static/goodreads.png" class="img-fluid mx-auto d-block mb-4" alt="goodreads">
+                <img src="../static/goodreads.png" class="img-fluid mx-auto d-block mb-3" alt="goodreads">
                 <div class="text-center">
                     <br>
                     <h6><a href=https://www.goodreads.com/search?q={{ target_book['isbn'] }}> More information at
