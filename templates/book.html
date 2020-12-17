@@ -19,14 +19,15 @@
                 <br>
                 <h6 class="card-text"><strong>ISBN: {{ target_book['isbn'] }}</strong></h6>
                 <h6 class="card-text"><strong>Published Year: {{ target_book['year'] }}</strong></h6>
+                <h6 class="card-text"><strong>Publishers: {{ publisher }}</strong></h6>
                 <br>
             </div>
             <div class="col-sm-4">
-                <img src="../static/goodreads.png" class="img-fluid mx-auto d-block" alt="goodreads">
+                <img src="../static/goodreads.png" class="img-fluid mx-auto d-block mb-4" alt="goodreads">
                 <div class="text-center">
-                    <h6>Publisher: {{ publisher }}</h6>
-                    <h6><a href=https://openlibrary.org/isbn/{{ target_book['isbn'] }}> More information at
-                        Open Library </a></h6>
+                    <br>
+                    <h6><a href=https://www.goodreads.com/search?q={{ target_book['isbn'] }}> More information at
+                        Goodreads</a></h6>
                 </div>
             </div>
         </div>

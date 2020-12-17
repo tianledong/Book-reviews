@@ -159,7 +159,7 @@ def book(isbn):
     url = f"https://openlibrary.org/isbn/{isbn}.json"
 
     res = requests.get(url)
-    publisher = res.json()['publishers'][0]
+    publisher = res.json()['publishers']
     if request.method == "GET":
         return render_template("book.html", target_book=target_book, comments=comments, publisher=publisher)
     elif request.method == "POST":
