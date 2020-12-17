@@ -156,13 +156,11 @@ def book(isbn):
 
     comments = db.execute("SELECT * FROM reviews WHERE isbn = :isbn", {"isbn": isbn}).fetchall()
 
-    if not os.getenv("GOODREADS_KEY"):
-        raise RuntimeError("Good reads key is not set!")
+    url = f"https://openlibrary.org/isbn/{isbn}.json"
 
-    res = requests.get("https://www.goodreads.com/book/review_counts.json",
-                       params={"key": os.getenv("GOODREADS_KEY"), "isbns": isbn})
-    average_rating = res.json()['books'][0]['average_rating']
-    ratings_count = res.json()['books'][0]['work_ratings_count']
+    res = requests.get(url)
+    average_rating = res.json()['number_of_pages']
+    ratings_count = res.json()['publishers'][0]
     if request.method == "GET":
         return render_template("book.html", target_book=target_book, comments=comments, average_rating=average_rating,
                                ratings_count=ratings_count)
