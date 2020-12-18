@@ -2,10 +2,13 @@
 
 Harvard CS50 - Web Programming with Python and JavaScript
 
-# TODO #
+# API #
 
-Need to find a replacement for Goodreads as of December 8th 2020, Goodreads is no longer issuing new developer keys for
-our public developer API and plans to retire these tools. :(
+<s>Need to find a replacement for Goodreads as of December 8th 2020, Goodreads is no longer issuing new developer keys for
+our public developer API and plans to retire these tools. :(</s>
+<br>
+Use Open library API to replace Goodreads API
+
 
 # Use the app #
 
